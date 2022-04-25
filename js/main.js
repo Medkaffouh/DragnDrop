@@ -23,18 +23,20 @@ function dragEnd() {
     this.className = 'fill';
 }
 
-function dragOver() {
-    console.log('over');
+function dragOver(e) {
+    e.preventDefault();
 }
 
-function dragEnter() {
-    console.log('enter');
+function dragEnter(e) {
+    e.preventDefault();
+    this.className += ' hovered';
 }
 
 function dragLeave() {
-    console.log('leave');
+    this.className = 'empty';
 }
 
 function dragDrop() {
-    console.log('drop');
+    this.className = 'empty';
+    this.append(fill);
 }
